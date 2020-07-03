@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express()
 
-const port = process.env.PORT || 3000;
-if (typeof port !== "number") {
+const port = +process.env.PORT || 3000;
+if (isNaN(port) || typeof port !== "number") {
   throw Error(`${port} is not a number.`);
 }
 
